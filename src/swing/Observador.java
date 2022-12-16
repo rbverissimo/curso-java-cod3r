@@ -34,6 +34,12 @@ public class Observador {
 			}
 		});
 		
+		// maneira moderna, usando lambda, já que é uma interface funcional: 
+		botao.addActionListener(e -> 
+			{System.out.println("Evento ocorreu com lambda!!!!");});
+		
+		// detalhe que o evento performa melhor com lambda do que classe anônima;
+		
 		
 		janela.setVisible(true);
 	}
