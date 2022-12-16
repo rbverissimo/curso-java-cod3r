@@ -1,6 +1,9 @@
 package swing;
 
 import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 
@@ -21,6 +24,15 @@ public class Observador {
 		janela.add(botao);
 		janela.setLayout(new FlowLayout());
 		janela.setLocationRelativeTo(null); // em relação à janela do SO; 
+		
+		// maneira mais antiga de criar algo para reagir ao botão:
+		botao.addActionListener(new ActionListener() {
+			// a API do Java cria uma classe anônima para implementar a interface
+			public void actionPerformed(ActionEvent e) {
+				System.out.println("Evento aconteceu!");
+				
+			}
+		});
 		
 		
 		janela.setVisible(true);
